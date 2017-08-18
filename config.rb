@@ -5,7 +5,7 @@ page '/*.txt', layout: false
 activate :directory_indexes
 
 activate :autoprefixer do |prefix|
-  prefix.browsers = "last 2 versions"
+  prefix.browsers = 'last 2 versions'
 end
 
 activate :deploy do |deploy|
@@ -14,5 +14,14 @@ end
 
 configure :development do
   activate :livereload
+end
+
+configure :build do
+  activate :minify_css
+  activate :minify_javascript
+
+  activate :asset_hash
+
+  activate :asset_host, host: 'https://nwatth.github.io/hausunit'
 end
 
