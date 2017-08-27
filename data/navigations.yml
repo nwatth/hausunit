@@ -1,0 +1,64 @@
+left:
+  - title: "Lifetyle"
+    items:
+      - name: "Residential"
+        link: "#"
+      - name: "Hospitality"
+        link: "#"
+      - name: "Retail"
+        link: "#"
+
+  - title: "Workplace"
+    items:
+        - name: "Workplace Architecture"
+          link: "#"
+        - name: "Workplace Interiors"
+          link: "#"
+
+  - title: "Community"
+    items:
+        - name: "Health"
+          link: "#"
+        - name: "Education"
+          link: "#"
+        - name: "Seniors Living"
+          link: "#"
+        - name: "Sport + Leisure"
+          link: "#"
+        - name: "Civic"
+          link: "#"
+
+
+
+right:
+  - title: "Insights"
+    items:
+      - name: "New Thinking"
+        link: "#"
+      - name: "Awards"
+        link: "#"
+
+  - title: "Partnership"
+    items:
+      - name: "dwp | APSU"
+        link: "#"
+      - name: "dwp | WGC"
+        link: "#"
+      - name: "dwp | buzz"
+        link: "#"
+      - name: "dwp | elegance"
+        link: "#"
+      - name: "dwp | HGA"
+        link: "#"
+
+  - title: "Profile"
+    items:
+      - name: "About dwp"
+        link: "#"
+      - name: "Our people"
+        link: "#"
+      - name: "Careers"
+        link: "#"
+      - name: "Contacts"
+        link: "#"
+

@@ -9,6 +9,8 @@
     %title= current_page.data.title || "Middleman"
     = stylesheet_link_tag "application"
   %body
+    = partial 'partials/header'
     = yield
+    = partial 'partials/footer'
     = javascript_include_tag "application"
 

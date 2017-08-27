@@ -1,0 +1,46 @@
+.navigation
+  position: fixed
+  display: flex
+  flex-direction: column
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  background: $color-background
+  +transition(left)
+
+  &--collapsed
+    left: 100vw
+
+  &__group
+    display: flex
+    flex-direction: column
+    flex-grow: 0
+    padding-top: $mobile-padding-top-navigation__group
+    padding-bottom: $mobile-padding-bottom-navigation__group
+    padding-right: $mobile-padding-right-navigation__group
+    padding-left: $mobile-padding-left-navigation__group
+
+    &--left
+      order: 1
+
+    &--right
+      order: 2
+
+  +desktop
+    position: relative
+    flex-direction: row
+    width: 100%
+    margin-left: $desktop-margin-left-navigation
+    
+    &--collapsed
+      left: 0
+
+    &__group
+      flex-direction: row
+      flex-grow: 1
+      padding-top: $desktop-padding-top-navigation__group
+      padding-bottom: $desktop-padding-bottom-navigation__group
+      padding-right: $desktop-padding-right-navigation__group
+      padding-left: $desktop-padding-left-navigation__group
+

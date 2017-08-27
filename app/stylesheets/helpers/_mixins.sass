@@ -1,0 +1,11 @@
+@mixin desktop
+  @media (min-width: #{$desktop-screen-width})
+    @content
+
+@mixin tablet
+  @media (min-width: #{$tablet-screen-width}) and (max-width: #{$desktop-screen-width - 1px})
+    @content
+
+@mixin transition($property: all, $duration: .4s)
+  transition: $property $duration cubic-bezier(.645, .045, .355, 1)
+

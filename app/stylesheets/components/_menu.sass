@@ -1,0 +1,41 @@
+.menu
+  display: block
+  margin-bottom: $mobile-margin-bottom-menu
+  line-height: 1.75em
+  vertical-align: middle
+
+  &__title
+    display: inline-block
+    padding-top: $mobile-margin-top-menu__title
+    padding-bottom: $mobile-margin-bottom-menu__title
+    color: $color-primary
+    text-decoration: none
+
+  &__items
+    position: relative
+    display: block
+    width: auto
+    margin-top: $mobile-margin-top-menu__items
+    overflow: hidden
+    +transition(margin)
+
+    &--collapsed
+      height: 0
+      width: 0
+      margin: 0
+
+    .menu__item
+      display: block
+
+  +desktop
+    display: inline-block
+    margin-bottom: $desktop-margin-bottom-menu
+    margin-right:  $desktop-margin-right-menu
+
+    &__title
+      padding-top: .25em
+      padding-bottom: .25em
+
+    &__items
+      position: absolute
+

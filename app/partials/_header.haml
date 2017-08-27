@@ -1,0 +1,23 @@
+%header.header
+  .container
+    %a.logo{href: '/'}
+      %img.logo__image{src: 'http://dwp.com/wp-content/themes/dwp/images/logo_black.svg', alt: 'Haus Unit'}
+    .hamburger.hamburger--collapse
+      .hamburger-box
+        .hamburger-inner
+    %nav.navigation.navigation--collapsed
+      .navigation__group.navigation__group--left
+        - data.navigations.left.each do |nav|
+          .menu
+            %a.menu__title{href: '#'}= nav.title
+            .menu__items.menu__items--collapsed
+              - nav.items.each do |item|
+                .menu__item= item.name
+
+      .navigation__group.navigation__group--right
+        - data.navigations.right.each do |nav|
+          .menu
+            %a.menu__title{href: '#'}= nav.title
+            .menu__items.menu__items--collapsed
+              - nav.items.each do |item|
+                .menu__item= item.name
