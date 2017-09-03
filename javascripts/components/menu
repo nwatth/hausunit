@@ -1,0 +1,68 @@
+(function() {
+  var COLLAPSED_CLASS_NAME, MENU_ITEMS_CLASS, MENU_TOGGLER_CLASS, TOGGLE_CLASS_NAME, i, len, menu_items, menu_togglers, toggler;
+
+  MENU_TOGGLER_CLASS = '.menu__toggle';
+
+  MENU_ITEMS_CLASS = '.menu__items';
+
+  COLLAPSED_CLASS_NAME = 'menu__items--collapsed';
+
+  TOGGLE_CLASS_NAME = 'is-active';
+
+  menu_togglers = document.querySelectorAll(MENU_TOGGLER_CLASS);
+
+  menu_items = document.querySelectorAll(MENU_ITEMS_CLASS);
+
+  for (i = 0, len = menu_togglers.length; i < len; i++) {
+    toggler = menu_togglers[i];
+    toggler.addEventListener('click', function(e) {
+      var items, j, k, len1, len2, that, toggle;
+      toggle = e.target;
+      items = e.target.nextElementSibling;
+      for (j = 0, len1 = menu_togglers.length; j < len1; j++) {
+        that = menu_togglers[j];
+        if (!that.classList.contains(TOGGLE_CLASS_NAME)) {
+          continue;
+        }
+        if (that === toggle) {
+          continue;
+        }
+        that.classList.remove(TOGGLE_CLASS_NAME);
+      }
+      for (k = 0, len2 = menu_items.length; k < len2; k++) {
+        that = menu_items[k];
+        if (that.classList.contains(COLLAPSED_CLASS_NAME)) {
+          continue;
+        }
+        if (that === items) {
+          continue;
+        }
+        that.classList.add(COLLAPSED_CLASS_NAME);
+      }
+      toggle.classList.toggle(TOGGLE_CLASS_NAME);
+      items.classList.toggle(COLLAPSED_CLASS_NAME);
+      return e.stopPropagation();
+    });
+  }
+
+  document.body.addEventListener('click', function(e) {
+    var j, k, len1, len2, results, that;
+    for (j = 0, len1 = menu_togglers.length; j < len1; j++) {
+      that = menu_togglers[j];
+      if (!that.classList.contains(TOGGLE_CLASS_NAME)) {
+        continue;
+      }
+      that.classList.remove(TOGGLE_CLASS_NAME);
+    }
+    results = [];
+    for (k = 0, len2 = menu_items.length; k < len2; k++) {
+      that = menu_items[k];
+      if (that.classList.contains(COLLAPSED_CLASS_NAME)) {
+        continue;
+      }
+      results.push(that.classList.add(COLLAPSED_CLASS_NAME));
+    }
+    return results;
+  });
+
+}).call(this);

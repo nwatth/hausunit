@@ -1,0 +1,21 @@
+(function() {
+  var COLLAPSED_CLASS_NAME, NAVIGATION_CLASS, NAVIGATION_TOGGLE_CLASS, TOGGLE_CLASS_NAME, navigation, navigation_toggle;
+
+  NAVIGATION_CLASS = '.navigation';
+
+  NAVIGATION_TOGGLE_CLASS = '.hamburger';
+
+  COLLAPSED_CLASS_NAME = 'navigation--collapsed';
+
+  TOGGLE_CLASS_NAME = 'is-active';
+
+  navigation = document.querySelector(NAVIGATION_CLASS);
+
+  navigation_toggle = document.querySelector(NAVIGATION_TOGGLE_CLASS);
+
+  navigation_toggle.addEventListener('click', function(e) {
+    navigation.classList.toggle(COLLAPSED_CLASS_NAME);
+    return navigation_toggle.classList.toggle(TOGGLE_CLASS_NAME);
+  });
+
+}).call(this);
